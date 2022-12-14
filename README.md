@@ -65,17 +65,40 @@ Se tiver o pnpm, execute este comando:
 pnpm dev
 ```
 
+## Endpoints
+
+
+|Método|Rota| Funcionalidade| Acesso |
+|:-------:|:-----:|:------:|:------:|
+|POST |  /api/v1/user | Registra um novo usuário. | Público |
+|GET |  /api/v1/user | Obtém todos os usuários. | Público |
+| |   | |  |
+|POST |  /api/v1/video | Registra um novo video. | Público |
+|GET |  /api/v1/video | Obtém todos os videos. | Público |
+|POST |  /api/v1/video/comment | Registra um novo comentário no video. | Público |
+|GET |  /api/v1/video/comment | Obtém todos os comentário dos videos. | Público |
+| |   | |  |
+|POST |  /api/v1/article | Registra um novo artigo. | Público |
+|GET |  /api/v1/article | Obtém todos os artigos. | Público |
+|POST |  /api/v1/article/comment | Registra um novo comentário no artigo. | Público |
+|GET |  /api/v1/article/comment | Obtém todos os comentário dos artigos. | Público |
+| |   | |  |
+|POST |  /api/v1/podcast | Registra um novo podcast. | Público |
+|GET |  /api/v1/podcast | Obtém todos os podcasts. | Público |
+|POST |  /api/v1/podcast/comment | Registra um novo comentário no podcast. | Público |
+|GET |  /api/v1/podcast/comment | Obtém todos os comentário dos podcasts. | Público |
+
 ## Entidades
 
-São 7 entidades que se inter-relacional, são elas:
+São 7 entidades que se inter-relacional:
 
 - Usuário
 - Artigo
 - Podcast
 - Video
-- Comentario-no-video
-- Comentario-no-artigo
-- Comentario-no-podcast
+- Comentário no video
+- Comentário no artigo
+- Comentário no podcast
 
 ### Schema visual de um novo usuário
 
