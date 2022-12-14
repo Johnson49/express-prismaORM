@@ -67,6 +67,7 @@ pnpm dev
 
 ## Endpoints
 
+As rotas são compostas pelo endereço base (http://localhost:3000) mais o recurso que você deseja acessa.
 
 |Método|Rota| Funcionalidade| Acesso |
 |:-------:|:-----:|:------:|:------:|
