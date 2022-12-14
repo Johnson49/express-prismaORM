@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  email     String   @unique
+  isCreator Boolean  @default(false)
+  password  String
+  createdAt DateTime @default(now())
+
+  videos           Video[]
+  Article          Article[]
+  podcast          Podcast[]
+
+  comment_in_video   CommentInVideo[]
+  comment_in_article CommentInArticle[]
+  comment_in_podcast CommentInPodcast[]
+
+  @@map("users")
+}
+
+// ----------------------------------------------
+
+model Video {
+  id        String           @id @default(uuid())
+  title     String
+  describe  String
+  url       String
+  author    User             @relation(fields: [authorId], references: [id])
+  authorId  String
+  comments  CommentInVideo[]
+  createdAt DateTime         @default(now())
+
+  @@map("videos")
+}
+
+model CommentInVideo {
+  id       String @id @default(uuid())
+  text     String
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  video   Video  @relation(fields: [videoId], references: [id])
+  videoId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("comments_in_video")
+}
+
+// ----------------------------------------------
+
+model Article {
+  id       String             @id @default(uuid())
+  title    String
+  text     String
+  author   User               @relation(fields: [authorId], references: [id])
+  authorId String
+  comments CommentInArticle[]
+
+  @@map("articles")
+}
+
+model CommentInArticle {
+  id        String   @id @default(uuid())
+  text      String
+
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+
+  article   Article @relation(fields: [articleId], references: [id])
+  articleId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("comments_in_article")
+}
+
+// ----------------------------------------------
+
+model Podcast {
+  id               String             @id @default(uuid())
+  title            String
+  describe         String
+  url              String
+
+  author           User               @relation(fields: [authorId], references: [id])
+  authorId         String
+
+  comments CommentInPodcast[]
+}
+
+model CommentInPodcast {
+  id       String @id @default(uuid())
+  text     String
+  
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  podcast   Podcast @relation(fields: [podcastId], references: [id])
+  podcastId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("comments_in_podcast")
+}

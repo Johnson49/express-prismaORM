@@ -1,0 +1,44 @@
+{
+  "name": "prismaORM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "_moduleAliases": {
+    "@database": "src/database",
+    "@usuario": "src/modules/usuario",
+    "@video": "src/modules/video",
+    "@artigo": "src/modules/artigo",
+    "@podcast": "src/modules/podcast",
+    
+    "@comentario-no-video": "src/modules/comentario-no-video",
+    "@comentario-no-artigo": "src/modules/comentario-no-artigo",
+    "@comentario-no-podcast": "src/modules/comentario-no-podcast"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev ./src/server.ts",
+    "prettier": "prettier --write ./src",
+    "eslint": "eslint ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.13",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "prisma": "^4.7.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.7.1",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.2"
+  }
+}
