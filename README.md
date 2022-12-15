@@ -21,7 +21,7 @@ npm install
 Se tiver o yarn, execute este comando:
 
 ```nodeJS
-yarn install
+yarn
 ```
 
 Se tiver o pnpm, execute este comando:
