@@ -11,17 +11,19 @@ cd express-prismaORM
 
 ### Instale as dependências
 
-Se tiver o npm, execute este comando: 
+Se tiver o npm, execute este comando:
 
 ```nodeJS
-npm install 
+npm install
 ```
-Se tiver o yarn, execute este comando: 
+
+Se tiver o yarn, execute este comando:
 
 ```nodeJS
 yarn install
 ```
-Se tiver o pnpm, execute este comando: 
+
+Se tiver o pnpm, execute este comando:
 
 ```nodeJS
 pnpm i
@@ -31,43 +33,60 @@ pnpm i
 
 O prisma também criará as tabelas com as migrations que estão na pasta `prisma/`
 
-Se tiver o npm, execute este comando: 
+Se tiver o npm, execute este comando:
 
 ```nodeJS
-npx prisma generate 
+npx prisma generate
 ```
-Se tiver o yarn, execute este comando: 
+
+Se tiver o yarn, execute este comando:
 
 ```nodeJS
-yarn prisma generate 
+yarn prisma generate
 ```
+
 Se tiver o pnpm, execute este comando:
 
 ```nodeJS
-pnpm prisma generate 
+pnpm prisma generate
 ```
 
 ### Inicie o servidor
 
-Se tiver o npm, execute este comando: 
+Se tiver o npm, execute este comando:
 
 ```nodeJS
-npm run dev 
+npm run dev
 ```
-Se tiver o yarn, execute este comando: 
+
+Se tiver o yarn, execute este comando:
 
 ```nodeJS
-yarn dev 
+yarn dev
 ```
-Se tiver o pnpm, execute este comando: 
+
+Se tiver o pnpm, execute este comando:
 
 ```nodeJS
 pnpm dev
 ```
 
+## Entidades
+
+São 7 entidades que se inter-relacional:
+
+- Usuário
+- Artigo
+- Podcast
+- Video
+- Comentário no video
+- Comentário no artigo
+- Comentário no podcast
+
 ## Endpoints
 
-As rotas são compostas pelo endereço base (http://localhost:3000) mais o recurso que você deseja acessa.
+As rotas são compostas pelo endereço base (<http://localhost:3000>) mais o recurso que você deseja
+acessa.
 
 |Método|Rota| Funcionalidade| Acesso |
 |:-------:|:-----:|:------:|:------:|
@@ -89,17 +108,81 @@ As rotas são compostas pelo endereço base (http://localhost:3000) mais o recur
 |POST |  /api/v1/podcast/comment | Registra um novo comentário no podcast. | Público |
 |GET |  /api/v1/podcast/comment | Obtém todos os comentário dos podcasts. | Público |
 
-## Entidades
+## Corpo da requisição (Request body)
 
-São 7 entidades que se inter-relacional:
+As propriedades que são requeridas para a criação de cada um dos recursos.
 
-- Usuário
-- Artigo
-- Podcast
-- Video
-- Comentário no video
-- Comentário no artigo
-- Comentário no podcast
+### POST - Usuário
+
+```json
+{
+  "email": "",
+  "password": "",
+  "username": ""
+}
+```
+
+### POST - Video
+
+```json
+{
+  "title": "",
+  "url": "",
+  "describe": "",
+  "authorId": ""
+}
+```
+
+### POST - Comentário do video
+
+```json
+{
+  "text": "",
+  "videoId": "",
+  "authorId": ""
+}
+```
+
+### POST - Artigo
+
+```json
+{
+  "title": "",
+  "text": "",
+  "authorId": ""
+}
+```
+
+### POST - Comentário do artigo
+
+```json
+{
+  "text": "",
+  "articleId": "",
+  "authorId": ""
+}
+```
+
+### POST - Podcast
+
+```json
+{
+  "title": "",
+  "url": "",
+  "describe": "",
+  "authorId": ""
+}
+```
+
+### POST - Comentário do podcast
+
+```json
+{
+  "text": "",
+  "podcastId": "",
+  "authorId": ""
+}
+```
 
 ### Schema visual de um novo usuário
 
