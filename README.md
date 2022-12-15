@@ -19,12 +19,12 @@ npm install
 Se tiver o yarn, execute este comando: 
 
 ```nodeJS
-yarn install 
+yarn install
 ```
 Se tiver o pnpm, execute este comando: 
 
 ```nodeJS
-pnpm install
+pnpm i
 ```
 
 ### Crie o banco de dados
