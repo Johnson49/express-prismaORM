@@ -6,6 +6,7 @@
 
 ```shell
 git clone https://github.com/Johnson49/express-prismaORM.git
+
 cd express-prismaORM
 ```
 
