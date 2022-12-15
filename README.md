@@ -134,7 +134,7 @@ As propriedades que são requeridas para a criação de cada um dos recursos.
 }
 ```
 
-### POST - Comentário do video
+### POST - Comentário no video
 
 ```json
 {
@@ -154,7 +154,7 @@ As propriedades que são requeridas para a criação de cada um dos recursos.
 }
 ```
 
-### POST - Comentário do artigo
+### POST - Comentário no artigo
 
 ```json
 {
@@ -175,7 +175,7 @@ As propriedades que são requeridas para a criação de cada um dos recursos.
 }
 ```
 
-### POST - Comentário do podcast
+### POST - Comentário no podcast
 
 ```json
 {
