@@ -32,7 +32,7 @@ pnpm i
 
 ### Crie o banco de dados
 
-O prisma também criará as tabelas com as migrations que estão na pasta `prisma/`
+O prisma criará as tabelas a partir das migrations que estão na pasta `prisma/`
 
 Se tiver o npm, execute este comando:
 
